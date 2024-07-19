@@ -23,7 +23,7 @@ jobs:
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: |
               ${{ runner.os }}-m2
-      - run:  echo $(date +%Y%m%d%) $( github.run_number)
+      - run:  date +%m%d%H%M%Y.%S 
       #-  name: Run Maven
          #run: mvn -f .github/workflows/pom.xml package
       
