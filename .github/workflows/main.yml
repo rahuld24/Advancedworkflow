@@ -1,5 +1,5 @@
 #Matrix  workflow
-name: $(date +'%Y-%m-%d') ${{ github.run_number }}
+name: $(date +'%Y-%m-%d') ${{ github. run_id }}
 on:
     workflow_dispatch:
           required: true 
