@@ -9,11 +9,18 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      #- name: checkout code
-        #uses: actions/checkout@v4
-      - run: echo "date=($date +"%Y-%m-%d")" >> $GITHUB_ENV
-      - name: Print the date
-        run: echo $GITHUB_ENV
+      - name: DATE PRINTING
+        id: date
+        run: "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_STATE
+        name: Test with environment variables
+        run: echo $TAG_NAME - $RELEASE_NAME
+        env:
+          TAG_NAME: nightly-tag-${{ env.date }}
+          RELEASE_NAME: nightly-release-${{ env.date }}
+          #- run: echo "date=($date +"%Y-%m-%d")" >> $GITHUB_ENV
+          #uses: actions/checkout@v4
+      #- name: Print the date
+        #run: echo $GITHUB_ENV
       - name: setup java
         uses: actions/setup-java@v3
         with:
