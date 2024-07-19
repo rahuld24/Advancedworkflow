@@ -11,13 +11,11 @@ jobs:
     steps:
       - name: DATE PRINTING
         id: date
-        run: "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_STATE
-        name: Test with environment variables
-        run: echo $TAG_NAME - $RELEASE_NAME
-        env:
-          TAG_NAME: nightly-tag-${{ env.date }}
-          RELEASE_NAME: nightly-release-${{ env.date }}
-          #- run: echo "date=($date +"%Y-%m-%d")" >> $GITHUB_ENV
+        run: echo "BUILD_TIME=$(date +'%T')" >> $GITHUB_ENV
+        #run: "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_STATE
+      - name: Test with environment variables
+        run: echo "Deploying at $BUILD_TIME"
+        #- run: echo "date=($date +"%Y-%m-%d")" >> $GITHUB_ENV
           #uses: actions/checkout@v4
       #- name: Print the date
         #run: echo $GITHUB_ENV
