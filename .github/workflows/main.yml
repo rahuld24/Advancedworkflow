@@ -23,7 +23,7 @@ jobs:
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: |
               ${{ runner.os }}-m2
-      - run: echo "::set-output name=today::$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+      - run: echo "::set-output name=today::$(date +'%Y-%m-%d')" 
       #- name: Echo current date
         #run: echo $NOW
       #-  name: Run Maven
