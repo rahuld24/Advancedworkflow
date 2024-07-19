@@ -1,5 +1,5 @@
 #Matrix  workflow
-name: $(date +'%Y-%m-%d') $( github.run_number)
+name: Date and Run_number_test    
 on:
     workflow_dispatch:
           required: true 
@@ -23,8 +23,9 @@ jobs:
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: |
               ${{ runner.os }}-m2
-      -  name: Run Maven
-         run: mvn -f .github/workflows/pom.xml package
+      - run:  echo $(date +'%Y-%m-%d') $( github.run_number)
+      #-  name: Run Maven
+         #run: mvn -f .github/workflows/pom.xml package
       
         #run: |
             #printf '{
