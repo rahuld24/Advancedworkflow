@@ -16,9 +16,9 @@ jobs:
         with:
             format: "YYYY_MM_DD"
 # Use the output from the `t1` step
-      - name: Output1
+      - name: Display Date
         run: |
-            echo "The Date was ${{ steps.t1.outputs.time }}"
+            echo "The Date is ${{ steps.t1.outputs.time }}"
             #echo "The year was ${{ steps.t1.outputs.year }}"
             #echo "The month was ${{ steps.t1.outputs.month }}"
             #echo "The day was ${{ steps.t1.outputs.day }}"
