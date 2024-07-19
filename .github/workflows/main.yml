@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v4
+      - run: echo "($date +"%Y-%m-%d")" >> $GITHUB_ENV
       - name: setup java
         uses: actions/setup-java@v3
         with:
@@ -23,7 +24,7 @@ jobs:
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: |
               ${{ runner.os }}-m2
-      - run: echo "::set-output name=today::$(date +'%Y-%m-%d')" 
+      
       #- name: Echo current date
         #run: echo $NOW
       #-  name: Run Maven
