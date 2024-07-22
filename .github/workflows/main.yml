@@ -1,10 +1,10 @@
-#Matrix  workflow
 name: Date and Revision number   
 on:
     workflow_dispatch:
           required: true 
     
-#CI/CD job with matrix build          
+#CI/CD job with matrix build
+run-name: Build to $DATE$RUN
 jobs:
   build:
     runs-on: self-hosted
@@ -20,7 +20,7 @@ jobs:
         run: |
             echo "The Date is ${{ steps.t1.outputs.time }}" >> DATE
             echo "Revision id ${{ github. run_number }}" >> RUN
-run-name: Build to $DATE$RUN
+
             #echo "The year was ${{ steps.t1.outputs.year }}"
             #echo "The month was ${{ steps.t1.outputs.month }}"
             #echo "The day was ${{ steps.t1.outputs.day }}"
