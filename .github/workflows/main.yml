@@ -19,34 +19,31 @@ jobs:
       - name: Display Date
         run: |
             echo "The Date is ${{ steps.t1.outputs.time }}"
+            echo ${{ github. run_id }}
             #echo "The year was ${{ steps.t1.outputs.year }}"
             #echo "The month was ${{ steps.t1.outputs.month }}"
             #echo "The day was ${{ steps.t1.outputs.day }}"
         #run: echo "BUILD_TIME=$(date +'%T')" >> $GITHUB_ENV
         #run: "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_STATE
-      - name: Test with environment variables
-        run: echo "Deploying at $BUILD_TIME"
+      #- name: Test with environment variables
+        #run: echo "Deploying at $BUILD_TIME"
         #- run: echo "date=($date +"%Y-%m-%d")" >> $GITHUB_ENV
           #uses: actions/checkout@v4
       #- name: Print the date
         #run: echo $GITHUB_ENV
-      - name: setup java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-      - name: Cache local Maven repository
-        uses: actions/cache@v3
-        with:
-            path: ~/.m2
-            key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-            restore-keys: |
+      #- name: setup java
+        #uses: actions/setup-java@v3
+        #with:
+          #java-version: '11'
+          #distribution: 'temurin'
+      #- name: Cache local Maven repository
+        #uses: actions/cache@v3
+        #with:
+            #path: ~/.m2
+            #key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+            #restore-keys: |
               ${{ runner.os }}-m2
-      
-      #- name: Echo current date
-        #run: echo $NOW
-      #-  name: Run Maven
-         #run: mvn -f .github/workflows/pom.xml package
+
       
         #run: |
             #printf '{
