@@ -10,16 +10,14 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: DATE PRINTING
-              
         id: t1
         uses: Kaven-Universe/github-action-current-date-time@v1
         with:
             format: "YYYY_MM_DD"
-#Use the output from the `t1` step
       - name: Display Date
         run: |
             echo "The Date is ${{ steps.t1.outputs.time }}"
-            echo "${{ github. run_id }}"
+            echo "Revision ID ${{ github. run_id }}"
             #echo "The year was ${{ steps.t1.outputs.year }}"
             #echo "The month was ${{ steps.t1.outputs.month }}"
             #echo "The day was ${{ steps.t1.outputs.day }}"
