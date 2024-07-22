@@ -1,5 +1,5 @@
 #Matrix  workflow
-name: Date and Run_number_test    
+name: "${{ steps.t1.outputs.time }} ${{ github. run_id }}"    
 on:
     workflow_dispatch:
           required: true 
