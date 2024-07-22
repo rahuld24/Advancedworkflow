@@ -19,8 +19,7 @@ jobs:
       - name: Display Date
         run: |
             echo "The Date is ${{ steps.t1.outputs.time }}"
-      - name: Display Revision
-        run: echo "${{ github. run_id }}"
+            echo "${{ github. run_id }}"
             #echo "The year was ${{ steps.t1.outputs.year }}"
             #echo "The month was ${{ steps.t1.outputs.month }}"
             #echo "The day was ${{ steps.t1.outputs.day }}"
