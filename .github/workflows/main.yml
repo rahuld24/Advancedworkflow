@@ -14,6 +14,7 @@ jobs:
         uses: Kaven-Universe/github-action-current-date-time@v1
         with:
             format: "YYYY_MM_DD"
+# Use the output from the `t1` step
       - name: Display Date
         run: |
             echo "The Date is ${{ steps.t1.outputs.time }}"
@@ -52,8 +53,6 @@ jobs:
         #with:
           #name: github-action-maven-tutorial-1.0-SNAPSHOT.jar
           #path: ./
-
-              
               
       
        
