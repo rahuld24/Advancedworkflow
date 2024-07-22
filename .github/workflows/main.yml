@@ -1,5 +1,5 @@
 #Matrix  workflow
-#name: Date and Revision number   
+name: Date and Revision number   
 on:
     workflow_dispatch:
           required: true 
@@ -18,9 +18,9 @@ jobs:
 # Use the output from the `t1` step
       - name: Display Date
         run: |
-            echo "The Date is ${{ steps.t1.outputs.time }}"
-            echo "Revision id ${{ github. run_number }}" >> GITHUB_ENV
-name: $GITHUB_ENV
+            echo "The Date is ${{ steps.t1.outputs.time }}" >> DATE
+            echo "Revision id ${{ github. run_number }}" >> RUN
+run-name: Build to $DATE$RUN
             #echo "The year was ${{ steps.t1.outputs.year }}"
             #echo "The month was ${{ steps.t1.outputs.month }}"
             #echo "The day was ${{ steps.t1.outputs.day }}"
