@@ -1,5 +1,5 @@
 name: Date and Revision number
-run-name:  Revision number is ${{ github. run_number }} and Date $(date +'%T')
+run-name:  Revision number is ${{ github. run_number }} and Date echo "$(date +'%Y-%m-%d')"
 on:
     workflow_dispatch:
           required: true 
