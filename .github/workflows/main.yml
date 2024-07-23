@@ -1,4 +1,5 @@
-name: Date and Revision number   
+name: Date and Revision number
+run-name: ${{ github.actor }} is learning GitHub Actions
 on:
     workflow_dispatch:
           required: true 
