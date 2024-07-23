@@ -5,7 +5,7 @@ on:
           required: true 
     
 #CI/CD job with matrix build
-run-name: Build to $DATE$RUN
+#run-name: Build to $DATE$RUN
 jobs:
   build:
     runs-on: self-hosted
