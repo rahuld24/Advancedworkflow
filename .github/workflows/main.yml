@@ -1,5 +1,5 @@
 name: Date and Revision number
-run-name:  ${{ github.event.repository.pushed_at}}. ${{ github. run_number }}. ${{ github.event.workflow_run.head_commit.message }}
+run-name:  ${{ github.event.repository.pushed_at}}. ${{ github. run_number }}. ${{ github.event.workflow_run.head_commit }}
 on:
     workflow_dispatch:
           required: true 
