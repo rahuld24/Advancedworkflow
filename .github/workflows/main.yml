@@ -2,7 +2,7 @@ run-name:  ${{ github.event.repository.pushed_at}}. ${{ github. run_number }}. $
 name: Date and Revision number
 on:
     workflow_dispatch:
-          required: true 
+    push:
     
 #CI/CD job with matrix build
 #run-name: Build to $DATE$RUN
